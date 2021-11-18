@@ -46,9 +46,9 @@ public class CarController {
     }
 
     @PostMapping("/add-car")
-    public String addCar(@ModelAttribute Car car) {
-        carDaoImpl.saveCar(car.getId(), car.getMark(), car.getModel(), car.getColor(), car.getProductionYear());
-        return "cars";
+    public String addCar(@ModelAttribute Car newCar) {
+        carDaoImpl.saveCar(newCar.getId(), newCar.getMark(), newCar.getModel(), newCar.getColor(), newCar.getProductionYear());
+        return "redirect:/cars";
     }
 
 
